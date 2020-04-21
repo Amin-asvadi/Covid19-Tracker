@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#201F1F"
+    tools:context=".ui.home.HomeFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Coronavirus COVID-19\nGlobal Cases"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            android:textColor="#FFF"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Comfirmd"
+            android:layout_marginTop="20dp"
+            android:textColor="#FFF"/>
+        <TextView
+            android:id="@+id/tvTotalComfirmd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:textSize="34dp"
+            android:layout_marginTop="15dp"
+            android:text="160132"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Toatal Daeths"
+            android:textColor="#7A7373"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvTotalDeath"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="5646"
+            android:textColor="#7A7373"
+            android:textStyle="bold"
+            android:textSize="34dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Toatal Recoverd"
+            android:textColor="#60BC63"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvTotalRecoverd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="1975"
+            android:textColor="#60BC63"
+            android:textStyle="bold"
+            android:textSize="34dp"/>
+
+
+
+    </LinearLayout>
+<ProgressBar
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/progress_circular_home"
+    android:indeterminate="true"
+    android:layout_centerInParent="true"
+/>
+
+
+</RelativeLayout>
