@@ -6,7 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
@@ -30,15 +32,22 @@ Context context;
     public CovidCountryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_covid_contries,parent,false);
 
+
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CovidCountryAdapter.ViewHolder holder, int position) {
-CovidCountries covidCountry = covidCountries.get(position);
+final CovidCountries covidCountry = covidCountries.get(position);
 holder.tvConteryName.setText(covidCountry.getmCovidCountries());
 holder.tvTotalCases.setText(covidCountry.getmCases());
 Picasso.with(context).load(covidCountry.getImgcountry()).into(holder.imageView);
+holder.itemView.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Toast.makeText(context, covidCountry.getmCovidCountries(), Toast.LENGTH_SHORT).show();
+    }
+});
     }
 
     @Override
@@ -49,8 +58,10 @@ Picasso.with(context).load(covidCountry.getImgcountry()).into(holder.imageView);
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView tvTotalCases,tvConteryName;
         ImageView imageView;
+        View mview;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            mview = itemView;
             imageView = itemView.findViewById(R.id.imgcountry);
             tvTotalCases = itemView.findViewById(R.id.tvTotalcases);
             tvConteryName = itemView.findViewById(R.id.tvTotalCountries);
