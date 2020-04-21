@@ -1,6 +1,7 @@
 package com.example.covid19_tracker.ui.Countries;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,10 +16,13 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.toolbox.NetworkImageView;
+import com.example.covid19_tracker.MainActivity;
 import com.example.covid19_tracker.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import static android.app.PendingIntent.getActivity;
 
 public class CovidCountryAdapter extends RecyclerView.Adapter<CovidCountryAdapter.ViewHolder> {
     ArrayList<CovidCountries> covidCountries;
@@ -35,9 +39,9 @@ Context context;
 
         return new ViewHolder(view);
     }
-
+getActivity
     @Override
-    public void onBindViewHolder(@NonNull CovidCountryAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CovidCountryAdapter.ViewHolder holder, final int position) {
 final CovidCountries covidCountry = covidCountries.get(position);
 holder.tvConteryName.setText(covidCountry.getmCovidCountries());
 holder.tvTotalCases.setText(covidCountry.getmCases());
@@ -45,7 +49,10 @@ Picasso.with(context).load(covidCountry.getImgcountry()).into(holder.imageView);
 holder.itemView.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        Toast.makeText(context, covidCountry.getmCovidCountries(), Toast.LENGTH_SHORT).show();
+
+        Intent details = new Intent(context,DetailsActivity.class);
+        context.startActivity(details);
+
     }
 });
     }
