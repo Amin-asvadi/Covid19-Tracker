@@ -39,7 +39,6 @@ Context context;
 
         return new ViewHolder(view);
     }
-getActivity
     @Override
     public void onBindViewHolder(@NonNull CovidCountryAdapter.ViewHolder holder, final int position) {
 final CovidCountries covidCountry = covidCountries.get(position);
@@ -51,6 +50,7 @@ holder.itemView.setOnClickListener(new View.OnClickListener() {
     public void onClick(View v) {
 
         Intent details = new Intent(context,DetailsActivity.class);
+        details.putExtra("contryimg",covidCountry.getImgcountry());
         context.startActivity(details);
 
     }
