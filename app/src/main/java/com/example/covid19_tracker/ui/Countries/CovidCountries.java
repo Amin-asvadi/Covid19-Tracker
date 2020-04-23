@@ -6,7 +6,10 @@ public class CovidCountries {
     public CovidCountries() {
     }
 
-    public CovidCountries(String mCovidCountries, String mCases,String imgcountry) {
+    public CovidCountries(String mCovidCountries, String mCases,
+                          String imgcountry,String mTodayCases,
+                          String mDeaths,String mTodayDeaths,
+                          String mRecovered) {
         this.mCovidCountries = mCovidCountries;
         this.mCases = mCases;
         this.imgcountry = imgcountry;
@@ -24,7 +27,23 @@ public class CovidCountries {
         return mCovidCountries;
     }
 
+    public String getmTodayCases() {
+        return mTodayCases;
+    }
+
+    public String getmRecovered() {
+        return mRecovered;
+    }
+
+    public String getmDeaths() {
+        return mDeaths;
+    }
+
     public String getmCases() {
         return mCases;
+    }
+
+    public String getmTodayDeaths() {
+        return mTodayDeaths;
     }
 }

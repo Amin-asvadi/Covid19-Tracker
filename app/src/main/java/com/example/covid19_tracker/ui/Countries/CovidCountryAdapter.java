@@ -51,6 +51,11 @@ holder.itemView.setOnClickListener(new View.OnClickListener() {
 
         Intent details = new Intent(context,DetailsActivity.class);
         details.putExtra("contryimg",covidCountry.getImgcountry());
+        details.putExtra("totoalcases",covidCountry.getmCases());
+        details.putExtra("todaycases",covidCountry.getmTodayCases());
+        details.putExtra("deaths",covidCountry.getmDeaths());
+        details.putExtra("todayDeaths",covidCountry.getmTodayDeaths());
+        details.putExtra("totalrecoverd",covidCountry.getmRecovered());
         context.startActivity(details);
 
     }

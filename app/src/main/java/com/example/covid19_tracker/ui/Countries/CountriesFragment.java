@@ -71,7 +71,13 @@ ArrayList<CovidCountries> covidCountries;
                                  obj = data.getJSONObject("countryInfo");
 
                             }
-                            covidCountries.add(new CovidCountries(data.getString("country"), data.getString("cases"),obj.getString("flag")));
+                            covidCountries.add(new CovidCountries(data.getString("country"),
+                                    data.getString("cases"),
+                                    obj.getString("flag"),
+                                    data.getString("todayCases"),
+                                    data.getString("deaths"),
+                                    data.getString("todayDeaths"),
+                                    data.getString("recovered")));
 
                         }
                         showRecyclerView();
